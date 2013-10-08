@@ -1,6 +1,6 @@
 (defproject org.clojars.guilespi/clj-facebook-graph "0.4.1"
   :description "A Clojure client for the Facebook Graph API (upgraded for Clojure 1.4.0)"
-  :url "http://github.com/FreeAgent/clj-facebook-graph/"
+  :url "http://github.com/guilespi/clj-facebook-graph/"
   :license {:name "Eclipse Public License - v 1.0"
             :url "http://www.eclipse.org/legal/epl-v10.html"
             :distribution :repo
