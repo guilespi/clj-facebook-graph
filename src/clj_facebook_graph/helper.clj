@@ -5,10 +5,9 @@
 ; By using this software in any fashion, you are agreeing to be bound by
 ; the terms of this license.
 ; You must not remove this notice, or any other, from this software.
-
 (ns clj-facebook-graph.helper
   "Some helper functions."
-  (:use [clojure.data.json :only [read-json read-json-from Read-JSON-From]]
+  (:use [clj-facebook-graph.json :only [read-json read-json-from Read-JSON-From]]
         [clojure.java.io :only [reader]]
         [clj-http.client :only [unexceptional-status?]]
         [clj-oauth2.uri :only [make-uri]]
