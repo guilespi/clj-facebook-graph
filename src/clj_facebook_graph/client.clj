@@ -8,12 +8,13 @@
 
 (ns clj-facebook-graph.client
   "A client for the Facebook Graph API based on clj-http and clj-oauth2."
+  (:refer-clojure :exclude [get])
   (:use [clj-facebook-graph.helper :only [wrap-exceptions facebook-base-url facebook-fql-base-url]]
         [clj-facebook-graph.auth :only [wrap-facebook-access-token]]
         [clj-facebook-graph.error-handling :only [wrap-facebook-exceptions]]
-        [clojure.data.json :only [read-json]] 
-        [clj-oauth2.client :only [wrap-oauth2]])
-  (:require [clj-http.client :as client]))
+        [clojure.data.json :only [read-json]] )
+  (:require [clj-http.client :as client]
+            [clj-oauth2.client :as oauth2]))
 
 (defn wrap-facebook-url-builder [client]
   "Offers some convenience by assemble a Facebook Graph API URL from a vector of keywords or strings.
@@ -96,7 +97,7 @@
          wrap-facebook-exceptions
          wrap-exceptions
          wrap-request-fn
-         wrap-oauth2
+         oauth2/wrap-oauth2
          wrap-facebook-access-token
          wrap-json-response-conversion
          wrap-facebook-url-builder
